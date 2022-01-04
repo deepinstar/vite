@@ -220,7 +220,7 @@ export function buildHtmlPlugin(config: ResolvedConfig): Plugin {
     },
 
     async transform(html, id) {
-      if (id.endsWith('.html')) {
+      if (id.endsWith('index.html')) {
         const publicPath = `/${slash(path.relative(config.root, id))}`
         // pre-transform
         html = await applyHtmlTransforms(html, preHooks, {
